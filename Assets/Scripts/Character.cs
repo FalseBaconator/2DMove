@@ -5,6 +5,13 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
 
+    [SerializeField]
+    private GameObject currentInteractiveObj;
+
+    [SerializeField]
+    public InteractionObject currentInterObjScript;
+
+
     public Animator anim;
     public Collider2D col;
     public Rigidbody2D rb;
@@ -20,6 +27,24 @@ public class Character : MonoBehaviour
     float X;
     float Y;
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("InteractionObject"))
+        {
+            currentInteractiveObj = collision.gameObject;
+            currentInterObjScript = collision.gameObject.GetComponent<InteractionObject>();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("InteractionObject"))
+        {
+            currentInteractiveObj = null;
+            currentInterObjScript = null;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -34,7 +59,28 @@ public class Character : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            anim.SetTrigger("Attack");
+            if(currentInteractiveObj != null)
+            {
+                switch (currentInterObjScript.interactiveType)
+                {
+                    case InteractionObject.InteractiveType.nothing:
+                        currentInterObjScript.Nothing();
+                        break;
+                    case InteractionObject.InteractiveType.pickup:
+                        currentInterObjScript.PickUp();
+                        break;
+                    case InteractionObject.InteractiveType.info:
+                        currentInterObjScript.Info();
+                        break;
+                    case InteractionObject.InteractiveType.dialogue:
+                        currentInterObjScript.Dialogue();
+                        break;
+                }
+            }
+            else
+            {
+                anim.SetTrigger("Attack");
+            }
         }
 
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
