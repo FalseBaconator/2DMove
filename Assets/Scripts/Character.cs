@@ -27,6 +27,14 @@ public class Character : MonoBehaviour
     float X;
     float Y;
 
+    [Header("Inventory")]
+    public int Coins = 0;
+    public int Keys = 0;
+    public int Pumpkins = 0;
+    public int Potions = 0;
+    public int Letters = 0;
+    public int Anvils = 0;
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("InteractionObject"))

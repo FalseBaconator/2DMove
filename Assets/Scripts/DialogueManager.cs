@@ -12,7 +12,7 @@ public class DialogueManager : MonoBehaviour
     public Animator anim;
 
     private Queue<string> dialogue;
-
+    private DialogueClass dialogueClass;
 
     // Start is called before the first frame update
     void Start()
@@ -20,12 +20,13 @@ public class DialogueManager : MonoBehaviour
         dialogue = new Queue<string>();
     }
 
-    public void StartDialogue(string[] sentences)
+    public void StartDialogue(DialogueClass dia)
     {
+        dialogueClass = dia;
         dialogue.Clear();
         dialogueUI.SetActive(true);
         StopPlayer();
-        foreach (string sentence in sentences)
+        foreach (string sentence in dia.sentences)
         {
             dialogue.Enqueue(sentence);
         }
@@ -58,6 +59,48 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        switch (dialogueClass.consumed)
+        {
+            case DialogueClass.Objects.Coin:
+                player.GetComponent<Character>().Coins -= dialogueClass.consumedAmount;
+                break;
+            case DialogueClass.Objects.Key:
+                player.GetComponent<Character>().Keys -= dialogueClass.consumedAmount;
+                break;
+            case DialogueClass.Objects.Pumpkin:
+                player.GetComponent<Character>().Pumpkins -= dialogueClass.consumedAmount;
+                break;
+            case DialogueClass.Objects.Potion:
+                player.GetComponent<Character>().Potions -= dialogueClass.consumedAmount;
+                break;
+            case DialogueClass.Objects.Letter:
+                player.GetComponent<Character>().Letters -= dialogueClass.consumedAmount;
+                break;
+            case DialogueClass.Objects.Anvil:
+                player.GetComponent<Character>().Anvils -= dialogueClass.consumedAmount;
+                break;
+        }
+        switch (dialogueClass.reward)
+        {
+            case DialogueClass.Objects.Coin:
+                player.GetComponent<Character>().Coins += dialogueClass.rewardAmount;
+                break;
+            case DialogueClass.Objects.Key:
+                player.GetComponent<Character>().Keys += dialogueClass.rewardAmount;
+                break;
+            case DialogueClass.Objects.Pumpkin:
+                player.GetComponent<Character>().Pumpkins += dialogueClass.rewardAmount;
+                break;
+            case DialogueClass.Objects.Potion:
+                player.GetComponent<Character>().Potions += dialogueClass.rewardAmount;
+                break;
+            case DialogueClass.Objects.Letter:
+                player.GetComponent<Character>().Letters += dialogueClass.rewardAmount;
+                break;
+            case DialogueClass.Objects.Anvil:
+                player.GetComponent<Character>().Anvils += dialogueClass.rewardAmount;
+                break;
+        }
         dialogueUI.SetActive(false);
         dialogue.Clear();
         ResumePlayer();

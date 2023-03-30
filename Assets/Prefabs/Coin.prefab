@@ -8,6 +8,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 393200458349119543, guid: a4b343db539719f4fbc73ee329002c2d, type: 3}
+      propertyPath: name
+      value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 393200458349119543, guid: a4b343db539719f4fbc73ee329002c2d, type: 3}
       propertyPath: interactiveType
       value: 1
       objectReference: {fileID: 0}

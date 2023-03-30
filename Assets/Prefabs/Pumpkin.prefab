@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 490895178961596529, guid: fcd9d27126a0b304fa4cb3cbeee8c999, type: 3}
+      propertyPath: name
+      value: Pumpkin
+      objectReference: {fileID: 0}
     - target: {fileID: 4693036454020297536, guid: fcd9d27126a0b304fa4cb3cbeee8c999, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -1244,6 +1244,38 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: b4ffa540969527b46a60383e468d96f0, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd5c67c89435c3442a1e5846b998c3b4, type: 3}
+--- !u!1 &796142932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 796142933}
+  m_Layer: 0
+  m_Name: DialogueStorage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &796142933
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796142932}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1772723249}
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &821295536
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7077,6 +7109,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3511635564224776845, guid: bd5c67c89435c3442a1e5846b998c3b4, type: 3}
+      propertyPath: dialogues.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511635564224776845, guid: bd5c67c89435c3442a1e5846b998c3b4, type: 3}
       propertyPath: dialogue.Array.data[0]
       value: Greetings, I am Robyn.
       objectReference: {fileID: 0}
@@ -7089,6 +7125,22 @@ PrefabInstance:
       value: Could you please ask the farmer to the west if I could borrow one of
         his?
       objectReference: {fileID: 0}
+    - target: {fileID: 3511635564224776845, guid: bd5c67c89435c3442a1e5846b998c3b4, type: 3}
+      propertyPath: dialogues.Array.data[0]
+      value: 
+      objectReference: {fileID: 1772723252}
+    - target: {fileID: 3511635564224776845, guid: bd5c67c89435c3442a1e5846b998c3b4, type: 3}
+      propertyPath: dialogues.Array.data[1]
+      value: 
+      objectReference: {fileID: 1772723250}
+    - target: {fileID: 3511635564224776845, guid: bd5c67c89435c3442a1e5846b998c3b4, type: 3}
+      propertyPath: dialogues.Array.data[2]
+      value: 
+      objectReference: {fileID: 1772723251}
+    - target: {fileID: 3511635564224776845, guid: bd5c67c89435c3442a1e5846b998c3b4, type: 3}
+      propertyPath: dialogues.Array.data[3]
+      value: 
+      objectReference: {fileID: 1772723253}
     - target: {fileID: 8595916667783776700, guid: bd5c67c89435c3442a1e5846b998c3b4, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -8345,6 +8397,141 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1772723248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1772723249}
+  - component: {fileID: 1772723252}
+  - component: {fileID: 1772723251}
+  - component: {fileID: 1772723250}
+  - component: {fileID: 1772723253}
+  m_Layer: 0
+  m_Name: Robyn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1772723249
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772723248}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 796142933}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1772723250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772723248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0241b44fd02f874183a92e996e1f559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  happensOnce: 1
+  happened: 0
+  endQuest: 1
+  afterQuest: 0
+  requirement: 3
+  requiredAmount: 1
+  reward: 4
+  rewardAmount: 1
+  consumed: 3
+  consumedAmount: 1
+  sentences:
+  - Thank you very much!
+  - Here's the potion, as promised!
+--- !u!114 &1772723251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772723248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0241b44fd02f874183a92e996e1f559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  happensOnce: 0
+  happened: 0
+  endQuest: 0
+  afterQuest: 0
+  requirement: 0
+  requiredAmount: 0
+  reward: 0
+  rewardAmount: 0
+  consumed: 0
+  consumedAmount: 0
+  sentences:
+  - Did you get that pumpkin yet?
+--- !u!114 &1772723252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772723248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0241b44fd02f874183a92e996e1f559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  happensOnce: 1
+  happened: 0
+  endQuest: 0
+  afterQuest: 0
+  requirement: 0
+  requiredAmount: 0
+  reward: 0
+  rewardAmount: 0
+  consumed: 0
+  consumedAmount: 0
+  sentences:
+  - Hello. My name is Robyn.
+  - I appear to be out of pumpkins.
+  - If you can get me one, I'll give you a potion on the house.
+  - I think the farmer to the west has some pumpkins.
+--- !u!114 &1772723253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772723248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0241b44fd02f874183a92e996e1f559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  happensOnce: 0
+  happened: 0
+  endQuest: 0
+  afterQuest: 1
+  requirement: 0
+  requiredAmount: 0
+  reward: 0
+  rewardAmount: 0
+  consumed: 0
+  consumedAmount: 0
+  sentences:
+  - Was the potion useful?
 --- !u!1001 &1805600124
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8418,9 +8605,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6048878918157208385, guid: 524a5f3ced0e98e4ea87e36982c48f6c, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 6048878918157208397, guid: 524a5f3ced0e98e4ea87e36982c48f6c, type: 3}
       propertyPath: speed
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6048878918157208398, guid: 524a5f3ced0e98e4ea87e36982c48f6c, type: 3}
       propertyPath: m_RootOrder
